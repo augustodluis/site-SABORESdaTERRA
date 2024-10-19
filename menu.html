@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores da Terra - Culinária Moçambicana</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        /* [Estilos anteriores permanecem iguais] */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #34495e;
+        }
+
+        nav a.active {
+            background-color: #3498db;
+        }
+
+        /* [Resto dos estilos permanece igual] */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/frango-zambeziana.jpg');
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .menu-section {
+            padding: 4rem 2rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item-content {
+            padding: 1rem;
+        }
+
+        .rating {
+            color: #f1c40f;
+            margin: 0.5rem 0;
+        }
+
+        .price {
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Início</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- [Resto do conteúdo permanece igual] -->
+    <div class="hero">
+        <div>
+            <h1>Nosso Menu</h1>
+            <p>Explore nossas deliciosas opções que trazem o melhor dos sabores moçambicanos.</p>
+        </div>
+    </div>
+
+    <section class="menu-section" id="menu">
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="images/matapa.jpg" alt="Matapa">
+                <div class="menu-item-content">
+                    <h3>Matapa</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <p>Folhas de mandioca com amendoim e camarão</p>
+                    <p class="price">350 MZN</p>
+                </div>
+            </div>
+
+            <!-- [Outros itens do menu permanecem iguais] -->
+            <div class="menu-item">
+                <img src="images/frango-zambeziana.jpg" alt="Frango à Zambeziana">
+                <div class="menu-item-content">
+                    <h3>Frango à Zambeziana</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(5.0)</span>
+                    </div>
+                    <p>Frango grelhado com molho picante</p>
+                    <p class="price">400 MZN</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images/cacana.jpg" alt="Cacana">
+                <div class="menu-item-content">
+                    <h3>Cacana</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(4.0)</span>
+                    </div>
+                    <p>Folhas de cacana com amendoim</p>
+                    <p class="price">300 MZN</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images/caril-caranguejo.jpg" alt="Caril de Caranguejo">
+                <div class="menu-item-content">
+                    <h3>Caril de Caranguejo</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <p>Caranguejo em molho de coco</p>
+                    <p class="price">450 MZN</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images/mucapata.jpg" alt="Mucapata">
+                <div class="menu-item-content">
+                    <h3>Mucapata</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(4.0)</span>
+                    </div>
+                    <p>Arroz com feijão e coco</p>
+                    <p class="price">250 MZN</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images/chamussas.jpg" alt="Chamussas">
+                <div class="menu-item-content">
+                    <h3>Chamussas</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(4.0)</span>
+                    </div>
+                    <p>Pastéis recheados com carne ou vegetais</p>
+                    <p class="price">150 MZN</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Sabores da Terra. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

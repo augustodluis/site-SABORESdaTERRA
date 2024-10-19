@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores da Terra</title>
+    <style>
+        :root {
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --header-bg: #35424a;
+            --header-text: #ffffff;
+            --accent-color: #e8491d;
+        }
+
+        .dark-theme {
+            --background-color: #1a1a1a;
+            --text-color: #f4f4f4;
+            --header-bg: #2c3e50;
+            --header-text: #ecf0f1;
+            --accent-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo img {
+            width: 100px;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header a {
+            color: var(--header-text);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header a:hover {
+            color: var(--accent-color);
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-toggle label {
+            margin-right: 10px;
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .destaque {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .destaque h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .destaque p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .destaque img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .pratos h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+        }
+
+        .grade-pratos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .prato-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .prato-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .prato-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .prato-item p {
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer {
+            background: var(--header-bg);
+            color: var(--header-text);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .map-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        iframe {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            header .container {
+                flex-direction: column;
+            }
+
+            header nav ul {
+                margin-top: 20px;
+            }
+
+            .grade-pratos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Sabores da Terra">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <label for="theme-select">Escolher Tema:</label>
+                <select id="theme-select">
+                    <option value="light">Claro</option>
+                    <option value="dark">Escuro</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="destaque">
+            <h1>Bem-vindo ao Sabores da Terra</h1>
+            <p>Desfrute de sabores autênticos e deliciosos</p>
+            <img src="images/imagem-destaque.jpg" alt="Imagem Destaque Sabores da Terra">
+        </section>
+
+        <section class="pratos">
+            <h2>Pratos em Destaque</h2>
+            <div class="grade-pratos">
+                <div class="prato-item">
+                    <img src="images/prato.jpg" alt="Arroz com especiarias">
+                    <p>Arroz com especiarias</p>
+                </div>
+                <div class="prato-item">
+                    <img src="images/prato-1.jpg" alt="Sabor Mediterrâneo">
+                    <p>Sabor Mediterrâneo</p>
+                </div>
+                <div class="prato-item">
+                    <img src="images/prato-2.jpg" alt="Culinária Tradicional">
+                    <p>Culinária Tradicional</p>
+                </div>
+                <div class="prato-item">
+                    <img src="images/prato-3.jpg" alt="Delícia do Chef">
+                    <p>Delícia do Chef</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61097.89218405545!2d36.91985504890458!3d-16.845283524480124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18d1ead139f4a2f3%3A0x665aa404b3e10dee!2sMocuba!5e0!3m2!1spt-PT!2smz!4v1729347880214!5m2!1spt-PT!2smz" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Sabores da Terra - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const themeSelect = document.getElementById('theme-select');
+        const body = document.body;
+
+        themeSelect.addEventListener('change', function() {
+            if (this.value === 'dark') {
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+            }
+        });
+    </script>
+</body>
+</html>
